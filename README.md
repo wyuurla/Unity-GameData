@@ -22,7 +22,7 @@ GameDataTest_Start에 GameDataManager.Instance.UpdateLogic(); 호출
 GameDataTest_Option에 저장된 볼륨으로 Slider 유아이에 적용, "Save"버튼을 클릭하면 파일에 저장한는 코드를 입력
 ![image](https://github.com/wyuurla/Unity-GameData/assets/37171461/0b04851f-8405-4896-8d1f-18e65c56f74a)
 
-GameDataTest_Start스크립트 컨포넌트로 추가.
+GameDataTest_Start스크립트 컨포넌트로 추가
 ![image](https://github.com/wyuurla/Unity-GameData/assets/37171461/4534555f-1c85-44d9-9192-25aa17613e6d)
 
 GameDataTest_Option스크립트 컴포넌트에 추가후 유아이 연결
