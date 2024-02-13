@@ -1,3 +1,5 @@
+using UnityEngine;
+
 [System.Serializable]
 public class GameData_Option : GameData 
 {
@@ -6,11 +8,31 @@ public class GameData_Option : GameData
 
 	public float sound_volume_bgm;
 	public float sound_volume_fx;
+	public SystemLanguage language;
+
 	public override void Init()
 	{
 		base.Init();
 		sound_volume_bgm = 1f;
 		sound_volume_fx = 1f;
+		language = Application.systemLanguage;
+	}
+
+	public void SetSound_voulme_bgm(float _value)
+	{
+		sound_volume_bgm = Mathf.Clamp(_value, 0f, 1f);
+		SaveNotify();
+	}
+	public void SetSound_voulme_fx(float _value)
+	{
+		sound_volume_fx = Mathf.Clamp(_value, 0f, 1f);
+		SaveNotify();
+	}
+
+	public void SetLanguage(SystemLanguage _language)
+	{
+		language = _language;
+		SaveNotify();
 	}
 }
 
