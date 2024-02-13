@@ -17,7 +17,7 @@ GameData_Option 스트립트에 사운드 볼륨 변수에 사용할 sound_volum
 ![image](https://github.com/wyuurla/Unity-GameData/assets/37171461/d3070d31-f383-4b56-883e-b05e1a0266e4)
 
 GameDataTest_Start에 GameDataManager.Instance.UpdateLogic(); 호출
-![image](https://github.com/wyuurla/Unity-GameData/assets/37171461/0162304b-c56e-4358-bfa6-835c303ec6bf)
+![image](https://github.com/wyuurla/Unity-GameData/assets/37171461/b420534c-4711-46e3-a548-e66ffb88617c)
 
 GameDataTest_Option에 저장된 볼륨으로 Slider 유아이에 적용, "Save"버튼을 클릭하면 파일에 저장한는 코드를 입력
 ![image](https://github.com/wyuurla/Unity-GameData/assets/37171461/0b04851f-8405-4896-8d1f-18e65c56f74a)
