@@ -18,12 +18,12 @@ public class GameData_Option : GameData
 		language = Application.systemLanguage;
 	}
 
-	public void SetSound_voulme_bgm(float _value)
+	public void SetSound_volume_bgm(float _value)
 	{
 		sound_volume_bgm = Mathf.Clamp(_value, 0f, 1f);
 		SaveNotify();
 	}
-	public void SetSound_voulme_fx(float _value)
+	public void SetSound_volume_fx(float _value)
 	{
 		sound_volume_fx = Mathf.Clamp(_value, 0f, 1f);
 		SaveNotify();

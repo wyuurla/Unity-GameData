@@ -17,7 +17,7 @@ public class GameDataTest_Option : MonoBehaviour
 
     public void SaveSoundVolume()
     {
-        GameData_Option.Instance.SetSound_voulme_bgm(slider_sound_bgm.value);
-        GameData_Option.Instance.SetSound_voulme_fx(slider_sound_fx.value);
+        GameData_Option.Instance.SetSound_volume_bgm(slider_sound_bgm.value);
+        GameData_Option.Instance.SetSound_volume_fx(slider_sound_fx.value);
     }
 }
