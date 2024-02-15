@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameDataTest_Option : MonoBehaviour
+public class UISoundVolume : MonoBehaviour
 {
     public Slider slider_sound_bgm;
     public Slider slider_sound_fx;

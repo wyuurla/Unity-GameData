@@ -9,19 +9,25 @@ using UnityEngine;
  */
 public class ProxyGameData<TGameData> : IProxyGameData where TGameData : GameData, new()
 {
-    TGameData m_gameData;
-    string m_filePath;
+    protected TGameData m_gameData; //게임데이터.
+    protected string m_filePath;    //저장된 파일 경로.
 
+    /**
+     * GameData를 리턴한다.
+     */
     public GameData GetGameData() { return m_gameData; }
 
     /**
-     * _filiePath가 null이면 저장하지 않는다. 서버의 데이터를 받아서 사용할때 null을 넣는다.
+     * _filiePath가 null이면 저장하지 않는다. 서버의 데이터만 받아서 사용할때 null을 넣는다.
      */
     public ProxyGameData(string _filiePath)
     {
         m_filePath = _filiePath;
     }
-   
+
+    /**
+     * 파일이 존재하지 않을때 게임데이터를 생성한다.
+     */
     public void Init()
     {
         m_gameData = new TGameData();
@@ -29,7 +35,7 @@ public class ProxyGameData<TGameData> : IProxyGameData where TGameData : GameDat
     }
     
     /**
-     *  m_filePath의 경로로 파일을 로드한다.
+     *  m_filePath의 경로로 파일을 로드한다. 파일이 없다면 기본 게임데이터로 생성한다.
      */
     public void Load()
     {
@@ -90,7 +96,10 @@ public class ProxyGameData<TGameData> : IProxyGameData where TGameData : GameDat
 
         m_gameData.Check();
     }
-    
+
+    /**
+     *  계정전화, 데이터 초기화때 사용한다.
+     */
     public void Logout()
     {
         if (null == m_gameData)
@@ -99,6 +108,9 @@ public class ProxyGameData<TGameData> : IProxyGameData where TGameData : GameDat
         m_gameData.Logout();
     }
 
+    /**
+     *  isSave가 true이면 게임 데이터를 저장한다.
+     */
     public void UpdateLogic()
     {
         if (null == m_gameData)

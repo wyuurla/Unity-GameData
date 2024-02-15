@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameDataTest_Start : MonoBehaviour
+public class SampleCode_Main : MonoBehaviour
 {
     void Update()
     {

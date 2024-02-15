@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,30 +8,28 @@ using UnityEngine;
  * @version 1.0.0
  * @author kij
  */
-
-
 public class GameDataManager : ClassSingleton<GameDataManager>, IManager
 {
     protected Dictionary<System.Type, IProxyGameData> m_dataList;
-    protected bool m_isInit;
 
     public GameDataManager()
     {
         Init();
     }
 
+    /**
+     * GameDataCreate 팩토리 클래스를 사용하여 데이터 클래스를 생성한후 로딩한다.
+     */
     public void Init()
     {
-        if (m_isInit == true)
-            return;
-
         GameDataCreate _create = new GameDataCreate_Local();
         m_dataList = _create.Create();
         Load();
+    }
 
-        m_isInit = true;
-    }  
-
+    /**
+     * 게임데이터를 파일로 부터 로딩한다. Init함수에서 초기화 할때 로딩하기때문에 특별한 경우가 아니면 사용하지 않는다.
+     */
     public void Load()
     {
         var _var = m_dataList.GetEnumerator();
@@ -42,6 +39,9 @@ public class GameDataManager : ClassSingleton<GameDataManager>, IManager
         }
     }
 
+    /**
+     * 파일을 로딩후에 체크(출석보상 날자 초기화가 필요할 경우 로직)해야 되는경우 사용한다. 
+     */
     public void Check()
     {
         var _var = m_dataList.GetEnumerator();
@@ -51,6 +51,9 @@ public class GameDataManager : ClassSingleton<GameDataManager>, IManager
         }
     }
 
+    /**
+     * 게임 데이터를 저장한다. 저장은 내부적으로 처리하기 때문에 특별한 경우가 아니면 사용하지 않는다.
+     */
     public void Save()
     {
         var _var = m_dataList.GetEnumerator();
@@ -60,6 +63,9 @@ public class GameDataManager : ClassSingleton<GameDataManager>, IManager
         }
     }
 
+    /**
+     * 계정전환이나 초기화할때 초기화 할때 사용한다.
+     */
     public void Logout()
     {
         var _Var = m_dataList.GetEnumerator();
@@ -69,6 +75,9 @@ public class GameDataManager : ClassSingleton<GameDataManager>, IManager
         }
     }
 
+    /**
+     * UpdateLogic()는 Update()함수에 꼭 호출해줘야 한다.
+     */
     public void UpdateLogic()
     {
         var _Var = m_dataList.GetEnumerator();
@@ -77,6 +86,10 @@ public class GameDataManager : ClassSingleton<GameDataManager>, IManager
             _Var.Current.Value.UpdateLogic();
         }
     }
+
+    /**
+     * GameData를 리턴한다.
+     */
     public TGameData GetGameData<TGameData>() where TGameData : GameData
     {
         System.Type _key = typeof(TGameData);

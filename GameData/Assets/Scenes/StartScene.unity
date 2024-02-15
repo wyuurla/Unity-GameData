@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 745352467}
   - component: {fileID: 745352471}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: SampleCode_Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1418,7 +1418,7 @@ GameObject:
   - component: {fileID: 1878603482}
   - component: {fileID: 1878603481}
   m_Layer: 5
-  m_Name: GameDataTest_Option
+  m_Name: UISoundVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
