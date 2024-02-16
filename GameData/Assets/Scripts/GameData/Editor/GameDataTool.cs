@@ -60,10 +60,7 @@ public class GameDataTool : EditorWindow
         _sb.AppendFormat("\tstatic {0} m_instance;", _className);
         _sb.Append("\n");
         _sb.Append("\t");
-        _sb.AppendFormat("public static {0} Instance ", _className);
-        _sb.Append("{ get { if (m_instance == null) { m_instance = GameDataManager.Instance.GetGameData");
-        _sb.AppendFormat("<{0}>(); ", _className);
-        _sb.Append("} return m_instance; } }");
+        _sb.AppendFormat("public static {0} Instance {{ get {{ if (m_instance == null) {{ m_instance = GameDataManager.Instance.GetGameData<{0}>();}} return m_instance; }} }}", _className);
         _sb.Append("\n");
         _sb.Append("\tpublic override void Init()\n");
         _sb.Append("\t{\n");

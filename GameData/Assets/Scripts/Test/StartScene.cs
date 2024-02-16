@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SampleCode_Main : MonoBehaviour
+public class StartScene : MonoBehaviour
 {
     void Update()
     {
